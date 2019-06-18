@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Curso Básico de Backbone.js</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		body {
+			font-family: 'Open Sans', Arial;
+		}
+	</style>
+</head>
+
+<!--Le agrego un id al body para usarlo con la vista principal-->
+<body id="app">
+	<div class="libros">
+		<h1>Libros</h1>
+	</div>
+
+<!--Defino un template-->
+<script type="text/template" id="tplMostrarLibro">
+	<!--Defino variables underscore-->
+	<h4><%= titulo %></h4>
+	<%= autor %>
+	<%= categoria %>
+	<hr>
+</script>
+
+<script type="text/template" id="tplMuestra">
+	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, unde?</p>
+</script>
+
+
+
+
+<!--
+	<p>Bienvenidos al Curso básico de Backbone.js</p>
+
+	<small>Producido por @Devcodela</small>
+
+-->
+<!--Para el render-->
+<div class="vista">
+	<div class="cambiarColor">
+
+	</div>
+</div>
+
+<div class="vista2">
+	<div id="div1">Libros:</div>
+	<button class="mostrarLibros">Mostrar</button>
+</div>
+
+	<script src="js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<!--<script src="js/vendor/underscore-min.js"></script>-->
+	<script src="https://underscorejs.org/underscore.js"></script>
+	<script src="js/vendor/backbone-min.js"></script>
+
+	<!--Se debe priorizar el orden de los archivos primero los modelos, luego las colecciones y por ultimo las vistas-->
+	<script src="js/backbone/models/libro.js"></script>
+	<script src="js/backbone/collections/libros.js"></script>
+	<script src="js/backbone/views/libreria.js"></script>
+	<script src="js/backbone/views/libreria1.js"></script>
+	<!--Vista extra-->
+	<script src="js/extra/main.js"></script>
+	<script src="js/backbone/routes/rutas.js"></script>
+	
+	
+	
+	<script>
+		//Definimos el template
+		var templateMuestra = _.template($('#tplMuestra').html());
+		$('body').append(templateMuestra);
+	</script>
+	
+
+</body>
+</html>
